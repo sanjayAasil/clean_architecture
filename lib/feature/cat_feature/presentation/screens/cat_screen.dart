@@ -100,7 +100,7 @@ class _CatScreenState extends State<CatScreen> {
                 }
 
                 final cat = state.cats[index];
-                return CustomCatWidget().getCatTile(cat, index);
+                return CustomCatWidget().getCatTile(cat, index,context);
               },
             );
           }
