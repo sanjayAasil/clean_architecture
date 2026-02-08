@@ -10,12 +10,12 @@ class CatRepositoryImpl implements CatRepository {
   CatRepositoryImpl({required this.local, required this.remote});
 
   @override
-  Future<List<CatEntity>> getCatEntities() async {
+  Future<List<CatEntity>> getCatEntities({int page = 0, int limit = 20}) async {
     // try {
-      final cats = await remote.getCats();
-      print('test ${cats.length}');
-      local.cacheCats(cats);
-      return cats.map((e) => e.toEntity()).toList();
+    final cats = await remote.getCats(page: page, limit: limit);
+    print('test ${cats.length}');
+    local.cacheCats(cats);
+    return cats.map((e) => e.toEntity()).toList();
     // } catch (e) {
     //   print('tessst check error $e');
     //   final cache = await local.getCachedCats();

@@ -12,8 +12,8 @@ class DioClient {
   static final Dio catDio = Dio(
     BaseOptions(
       baseUrl: "https://api.thecatapi.com/v1/images",
-      receiveTimeout: Duration(seconds: 10),
-      connectTimeout: Duration(seconds: 10),
+      // receiveTimeout: Duration(seconds: 10),
+      // connectTimeout: Duration(seconds: 10),
     ),
   );
 }

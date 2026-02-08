@@ -12,11 +12,12 @@ class CatLoading extends CatState {}
 
 class CatLoaded extends CatState {
   final List<CatEntity> cats;
+  final bool isLoadingMore;
 
-  CatLoaded(this.cats);
+  CatLoaded({required this.cats, required this.isLoadingMore});
 
   @override
-  List<Object?> get props => [cats];
+  List<Object?> get props => [cats, isLoadingMore];
 }
 
 class CatError extends CatState {

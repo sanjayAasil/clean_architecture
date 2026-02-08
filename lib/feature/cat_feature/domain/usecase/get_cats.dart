@@ -6,7 +6,7 @@ class GetCats {
 
   GetCats(this.repo);
 
-  Future<List<CatEntity>> call() {
-    return repo.getCatEntities();
+  Future<List<CatEntity>> call({int page = 0, int limit = 20}) {
+    return repo.getCatEntities(limit: limit, page: page);
   }
 }
