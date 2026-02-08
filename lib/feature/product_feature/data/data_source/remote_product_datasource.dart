@@ -10,11 +10,10 @@ abstract class RemoteProductDatasource {
   Future<ProductModel> getProduct();
 }
 
-class RemoteDataSourceImpl implements RemoteProductDatasource {
+class RemoteProductDataSourceImpl implements RemoteProductDatasource {
   @override
   Future<List<ProductModel>> getAllProducts() async {
-    print('tdtrdtert');
-    final Response res = await DioClient.dio.get(
+     final Response res = await DioClient.dio.get(
       "/images/search",
       queryParameters: {'limit': 10, 'page': 1},
     );

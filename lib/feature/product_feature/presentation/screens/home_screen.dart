@@ -1,3 +1,4 @@
+import 'package:demo_2/feature/cat_feature/presentation/screens/cat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -32,6 +33,14 @@ class _HomeScreenState extends State<HomeScreen> {
               context.read<ProductBloc>().add(GetProductsEvent());
             },
             child: Text('refresh'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (context) => CatScreen()));
+            },
+            child: Text('Next page'),
           ),
         ],
       ),
